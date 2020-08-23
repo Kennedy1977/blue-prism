@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* ******* ********* ********* ********* ********* ********* ********* *********
+    0. Setup some global variables
+/* ******* ********* ********* ********* ********* ********* ********* ****** */
+:root {
+  /* Document */
+  --min-width: 20em; /* 320px small device */
+  --max-width: 100vw;
+  /* Spacing */
+  --spacing: 1rem;
+  --spacing-small: 0.625rem;
+  --spacing-large: 2rem;
+  /* borders */
+  --border: 0.063rem;
+  --border-thick: 0.125rem;
+  --border-radius: 0.25rem;
+  /* Icons */
+  --icon-size: 1.5rem;
+
+  /* Units */
+  --u1: 0.063rem;
+  --u2: 0.125rem;
+  --u4: 0.25rem;
+  --u8: 0.5rem;
+  --u10: 0.625rem;
+  --u12: 0.75rem;
+  --u14: 0.875rem;
+  --u16: 1rem;
+  --u18: 1.125rem;
+  --u20: 1.25rem;
+  --u24: 1.5rem;
+  --u32: 2rem;
+  --u48: 3rem;
+  --u64: 4rem;
+  --u100: 6.25rem;
+  /* Typography */
+  --font-primary: ratio-display, sans-serif; /* 300, 400 & 700 weight */
+  --font-heading: jeanne-moderno, serif; /* 400, 600, 700 weight */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+  --line-height: 1.25;
+  --heading: 1.75rem;
+  --heading-small: 1.5rem;
+  --body: 1rem;
+  --body-small: 0.85rem;
+  /* Colour palette */
+  --col-light: #f4ffff;
+  --col-dark: #2d2945;
+  --col-primary: #14366b;
+  --col-secondary: #2155ab;
+  --col-tertiary: #79c4db;
+  --col-good: #9bf244;
+  --col-bad: #ed492d;
+}
+/* ******* ********* ********* ********* ********* ********* ********* *********
+    1. Global reset & initial styling
+/* ******* ********* ********* ********* ********* ********* ********* ****** */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;
+}
+html {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-300);
+  font-style: normal;
+  font-size: min(max(var(--body), 2vw), var(--heading-small)); /* IE11 */
+  font-size: clamp(var(--body), 2vw, var(--heading-small));
+  line-height: var(--line-height);
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  width: var(--max-width);
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
+  grid-gap: var(--spacing);
+  grid-auto-flow: dense;
+  color: var(--col-primary);
+  background-color: var(--col-light);
+}
+
+a {
+  text-decoration: underline;
+  font-weight: inherit;
+}
+
+p {
+  line-height: var(--line-height);
+  margin-bottom: var(--line-height);
+  font-weight: var(--fw-300);
+}
+
+p > span {
+  font-weight: var(--fw-700);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--heading);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-700);
+  line-height: var(--line-height);
+}
+/* ******* ********* ********* ********* ********* ********* ********* *********
+    2. Components
+/* ******* ********* ********* ********* ********* ********* ********* ****** */
+
+/*  2.1 Header */
+
+header {
+  display: grid;
+  width: 100%;
+  height: var(--u64);
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  color: var(--col-light);
+  background-color: var(--col-dark);
+  margin-bottom: var(--spacing);
+  padding: 0 var(--spacing);
+}
+
+.title {
+  line-height: var(--u48);
+}
+
+.menu {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  width: var(--u48); /* 48px touch device hit area */
+  height: var(--u48); /* 48px touch device hit area */
+  cursor: pointer;
+}
+.menu:hover {
+  background-color: var(--col-secondary);
+  border-radius: var(--border-radius);
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+.icon__fill {
+  fill: var(--col-light);
+}
+
+/*  2.2 Container */
+
+.container {
+  display: grid;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+}
+
+/*  2.3 Panel */
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  justify-content: space-between;
+  padding: var(--spacing-small) var(--spacing);
+  border-bottom: var(--border-thick) solid var(--col-secondary);
+  border-radius: var(--border-radius);
+  /* box-shadow: var(--u1) var(--u1) var(--u4) 0 rgba(0, 0, 0, 0.3); */
+}
+
+.panel__title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-400);
+  font-size: var(--body);
+}
+
+.panel__notification {
+  font-size: var(--body-small);
+  line-height: var(--line-height);
+}
+
+/*  2.4 Buttons */
+.btn-container {
+  display: grid;
+  align-content: center;
+  justify-items: end;
+}
+
+.btn,
+.btn--primary {
+  display: inherit;
+  min-width: var(--u100);
+  height: var(--u32);
+  font-size: var(--u12);
+  line-height: var(--u32);
+  font-weight: var(--fw-300);
+  align-content: center;
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+  text-transform: capitalize;
+  color: var(--col-light);
+  border: var(--border-thick) solid var(--col-primary);
+  border-radius: var(--border-radius);
+  background-color: var(--col-primary);
+}
+
+.btn--secondary {
+  color: var(--col-primary);
+  border: var(--border-thick) solid var(--col-primary);
+  border-radius: var(--border-radius);
+  background-color: var(--col-light);
+}
