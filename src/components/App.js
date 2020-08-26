@@ -1,14 +1,13 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Header } from "../components/Header/Header";
 import { Panel } from "../components/content/Panel";
-import { useUpdatePath } from "./helpers/useUpdatePath";
+import { UpdatePath } from "./helpers/UpdatePath";
 
 export const App = () => {
-  useUpdatePath(); // passive hook
-
   return (
-    <>
+    <Router>
+      <UpdatePath />
       <Header />
       <main id="main" role="main">
         <Switch>
@@ -17,6 +16,6 @@ export const App = () => {
         </Switch>
       </main>
       <footer></footer>
-    </>
+    </Router>
   );
 };
