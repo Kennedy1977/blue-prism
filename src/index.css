@@ -235,12 +235,11 @@ header {
   display: inherit;
   min-width: var(--u100);
   height: var(--u32);
-  font-size: var(--u12);
+  font-size: var(--u14);
   line-height: var(--u32);
   font-weight: var(--fw-light);
   align-content: center;
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  padding: var(--spacing) var(--spacing-large);
   text-transform: capitalize;
   color: var(--col-light);
   border: var(--border-thick) solid var(--col-primary);
