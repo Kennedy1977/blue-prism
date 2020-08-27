@@ -8,6 +8,7 @@ const initialState = {
   env: {
     path: null,
     loading: false,
+    id: null,
   },
 };
 
@@ -22,7 +23,10 @@ export const GlobalProvider = ({ children }) => {
   const updatePath = () => {
     dispatch({
       type: "UPDATE_PATH",
-      payload: window.location.pathname.split("/")[1],
+      payload: {
+        path: window.location.pathname.split("/")[1],
+        id: window.location.pathname.split("/")[2],
+      },
     });
   };
 

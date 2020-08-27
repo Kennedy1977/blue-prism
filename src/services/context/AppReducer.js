@@ -1,11 +1,18 @@
 export default (state, action) => {
   switch (action.type) {
     case "UPDATE_PATH":
+      let id = "";
+
+      if (action.payload.id !== undefined) {
+        id = action.payload.id;
+      }
+
       return {
         ...state,
         env: {
           ...state.env,
-          path: action.payload,
+          path: action.payload.path,
+          id: id,
         },
       };
     case "UPDATE_PAGE_ID":

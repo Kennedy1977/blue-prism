@@ -12,7 +12,7 @@ export const App = () => {
       <main id="main" role="main">
         <Switch>
           <Route path="/" component={Panel} />
-          <Route path="/stages:id" component={Panel} />
+          <Route exact path="/stages:id" component={Panel} />
         </Switch>
       </main>
       <footer></footer>
