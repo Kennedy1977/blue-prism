@@ -18,10 +18,10 @@ I have used a CSS Grid technique which does not require breakpoints, to make the
 
 ## Performance & Accessibility (Lighthouse scores)
 
-90 - Performance
-100 - Accessibility
-100 - SEO
-100 - Best Practices
+- 90 - Performance,
+- 100 - Accessibility,
+- 100 - SEO,
+- 100 - Best Practices
 
 ## More time
 
