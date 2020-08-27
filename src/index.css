@@ -236,7 +236,7 @@ header {
   min-width: var(--u100);
   height: var(--u32);
   font-size: var(--u14);
-  line-height: var(--u32);
+  line-height: 0;
   font-weight: var(--fw-light);
   align-content: center;
   padding: var(--spacing) var(--spacing-large);
