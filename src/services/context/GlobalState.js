@@ -19,41 +19,41 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   //Actions
-  function updatePath() {
+  const updatePath = () => {
     dispatch({
       type: "UPDATE_PATH",
       payload: window.location.pathname.split("/")[1],
     });
-  }
+  };
 
-  function updatePages(data) {
+  const updatePages = (data) => {
     dispatch({
       type: "UPDATE_PAGES",
       payload: data,
     });
-  }
+  };
 
-  function updatePageId(data) {
+  const updatePageId = (data) => {
     dispatch({
       type: "UPDATE_PAGE_ID",
       payload: data,
     });
-  }
+  };
 
-  function updateStages(data, pageName) {
+  const updateStages = (data, pageName) => {
     let payload = { data, pageName };
     dispatch({
       type: "UPDATE_STAGES",
       payload: payload,
     });
-  }
+  };
 
-  function isLoading(data) {
+  const isLoading = (data) => {
     dispatch({
       type: "IS_LOADING",
       payload: data,
     });
-  }
+  };
 
   return (
     <GlobalContext.Provider

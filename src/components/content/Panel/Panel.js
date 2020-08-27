@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState } from "react";
-import { GlobalContext } from "../../services/context/GlobalState";
-import { useApi } from "../../services/api/index";
-import { PanelList } from "./PanelList";
-import { ButtonContainer } from "../buttons/ButtonContainer/ButtonContainer";
+import { GlobalContext } from "../../../services/context/GlobalState";
+import { useApi } from "../../../services/api/index";
+import { PanelList } from "../PanelList/PanelList";
+import { ButtonContainer } from "../../buttons/ButtonContainer/ButtonContainer";
 
 export const Panel = () => {
   const [display, setDisplay] = useState(null);
@@ -31,10 +31,14 @@ export const Panel = () => {
   return (
     <article className="container" role="list">
       <PanelList
+        tid="PanelList"
         display={display}
         data={display === "pages" ? pages : stages}
       />
-      <ButtonContainer data={[{ label: label, css: "btn btn-primary" }]} />
+      <ButtonContainer
+        tid="ButtonContainer"
+        data={[{ label: label, css: "btn btn-primary" }]}
+      />
     </article>
   );
 };

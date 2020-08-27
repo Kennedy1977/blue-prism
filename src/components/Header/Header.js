@@ -12,7 +12,7 @@ export const Header = () => {
   return (
     <header role="banner">
       <h1 className="title">{title}</h1>
-      <div className="network hidden">
+      <div className="network hidden" role="alert" aria-busy="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"

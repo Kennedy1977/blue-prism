@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useApi } from "../../services/api/index";
+import { useApi } from "../../../services/api/index";
 
 export const Pages = (props) => {
   const { getStageDetails } = useApi();

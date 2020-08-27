@@ -1,10 +1,8 @@
 import React from "react";
-import { Pages } from "./Pages";
-import { Stages } from "./Stages";
+import { Pages } from "../Pages/Pages";
+import { Stages } from "../Stages/Stages";
 
 export const PanelList = (props) => {
-  console.log(props);
-
   if (props.data !== null && props.display === "pages") {
     const panelSet = props.data.pages.map((pages) => {
       return <Pages data={pages} key={pages.id} />;

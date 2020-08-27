@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { GlobalContext } from "../../services/context/GlobalState";
 
-export const UpdatePath = () => {
+export const TrackPath = () => {
   const { env, updatePath } = useContext(GlobalContext);
   const history = useHistory();
 
